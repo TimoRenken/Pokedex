@@ -4,6 +4,7 @@ let loadLimit = 21;
 
 async function init(){ 
     await loadPokemon();
+    includeHTML();
     renderPokemonList();
 }
 

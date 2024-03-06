@@ -2,6 +2,11 @@ body{
     margin: 0;
     font-family: Lato, sans-serif;
 }
+.d_flex_c_c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #pokedex{
     min-height: 50vh;
