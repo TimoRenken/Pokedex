@@ -29,3 +29,16 @@ body{
     margin-right: auto;
     margin-top: -80px;
 }
+.small_card_img{
+    width: 150px;
+}
+#small_card{
+    display: flex;
+    justify-content: space-around;
+    background-color: green;
+    border-radius: 40px;
+    margin: 16px 8px;
+}
+.card_id{
+    text-align: end;
+}
