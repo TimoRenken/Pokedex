@@ -1,0 +1,51 @@
+.type_grass{
+    background: radial-gradient(circle, rgb(8, 172, 8), rgb(11 151 11));
+}
+.type_fire{
+    background: radial-gradient(circle, rgb(247, 43, 43), rgb(172, 14, 14));
+}
+.type_water{
+    background: radial-gradient(circle, rgb(51, 54, 255), rgb(16, 79, 173));
+}
+.type_bug{
+    background: radial-gradient(circle, rgb(213 197 54), rgb(149 140 10));
+}
+.type_normal{
+    background: radial-gradient(circle, rgb(202, 202, 202), rgb(121, 121, 121));
+}
+.type_poison{
+    background: radial-gradient(circle, rgb(128 11 205), rgb(92 51 131));
+}
+.type_electric{
+    background: radial-gradient(circle, rgb(233 235 107), rgb(190 193 5));
+}
+.type_ground{
+    background: radial-gradient(circle, rgb(229 193 92 / 77%), rgb(85 70 5 / 96%));
+}
+.type_fairy{
+    background: radial-gradient(circle, rgb(247 146 247 / 77%), rgba(207, 14, 182, 0.96));
+}
+.type_fighting{
+    background: radial-gradient(circle, rgba(124, 181, 255, 0.856), rgb(18 130 221 / 96%));
+}
+.type_psychic{
+    background: radial-gradient(circle, rgba(248, 117, 248, 0.77), rgb(169 35 150 / 96%));
+}
+.type_rock{
+    background: radial-gradient(circle, rgb(183 141 26 / 77%), rgba(71, 59, 4, 0.96));
+}
+.type_ghost{
+    background: radial-gradient(circle, rgb(118 70 151), rgb(79, 41, 114));
+}
+.type_ice{
+    background: radial-gradient(circle, rgba(153, 193, 245, 0.856), rgba(87, 173, 243, 0.96));
+}
+.type_dragon{
+    background: radial-gradient(circle, rgb(103, 61, 252), rgb(68, 59, 153));
+}
+.type_dark{
+    background: radial-gradient(circle, rgb(103 82 26 / 80%), rgb(30 24 3 / 87%));
+}
+.type_steel{
+    background: radial-gradient(circle, rgb(192, 184, 184), rgb(185 185 185));
+}

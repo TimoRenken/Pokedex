@@ -7,6 +7,14 @@ body{
     justify-content: center;
     align-items: center;
 }
+.d_flex_sb_c{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.color_white{
+    color:white
+}
 
 #pokedex{
     min-height: 50vh;
@@ -30,15 +38,36 @@ body{
     margin-top: -80px;
 }
 .small_card_img{
-    width: 150px;
+    width: 120px;
 }
 #small_card{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     background-color: green;
     border-radius: 40px;
     margin: 16px 8px;
+    text-align: center;
+    cursor: pointer;
+}
+.small_card_body{
+    padding: 0 20px 0 20px;
+    background-image: url(/images/pokeball_bg.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+.small_card_header{
+    height: 20px;
+    margin-top: 20px;
 }
 .card_id{
-    text-align: end;
+    text-align: center;
+    color: #e7e7e7;
+}
+.types_small{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
 }
