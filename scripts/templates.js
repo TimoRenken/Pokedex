@@ -1,11 +1,11 @@
 
 // Displays small Pokemon Cards
-function generatePokemonList(pokemon) {
+function generatePokemonList(pokemon, i) {
     let name = pokemon['name'];
     let formattedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(); // returns first letter uppercased, rest lowercased.
 
     return /*html*/ `
-        <div id="small_card">
+        <div id="small_card_${i}" class="small_card">
             <div class="small_card_body">
                  <div class="d_flex_sb_c small_card_header">
                     <h1 class="color_white">${formattedName}</h1>

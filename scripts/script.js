@@ -12,4 +12,9 @@ async function includeHTML() {
     }
   }
 
-  
+// determine Backgroundcolor by Pokemontype
+function determineBackgroundColor(pokemon, i){
+  let card = document.getElementById(`small_card_${i}`);
+  let type = pokemon['types']['0']['type']['name'];
+  card.classList.add(`type_${type}`);
+}

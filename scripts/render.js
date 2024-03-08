@@ -23,14 +23,15 @@ function renderPokemonInfo() {
     document.getElementById('pokemon_name').innerHTML = currentPokemon['name'];
     document.getElementById('pokemonImage').src = currentPokemon['sprites']['other']["official-artwork"]['front_default'];
 }
-
+// shows small Pokemoncards as a List. 
 function renderPokemonList(){
     let content = document.getElementById('content');
     content.innerHTML = '';
 
     for (let i = 0; i < allPokemon.length; i++) {
         const pokemon = allPokemon[i];
-        content.innerHTML += generatePokemonList(pokemon);
+        content.innerHTML += generatePokemonList(pokemon, i);
+        determineBackgroundColor(pokemon, i);
     }
 
 }

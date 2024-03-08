@@ -40,11 +40,10 @@ body{
 .small_card_img{
     width: 120px;
 }
-#small_card{
+.small_card{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: green;
     border-radius: 40px;
     margin: 16px 8px;
     text-align: center;
