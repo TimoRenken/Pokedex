@@ -13,15 +13,14 @@ function generatePokemonList(pokemon, i) {
                 </div>
                 <div class="d_flex_sb_c">
                    <div class="types_small">
-                     <div>${pokemon['types']['0']['type']['name']}</div>
-                     <div>${pokemon['types'][1] ? `<div>${pokemon['types']['1']['type']['name']}</div>` : ''}</div>
-                   </div>
+                   <div id="display_type${i * 2}" class="display_type">${pokemon['types']['0']['type']['name']}</div>
+                   <div id="display_type${i * 2 + 1}" class="display_type">${pokemon['types'][1] ? `<div>${pokemon['types']['1']['type']['name']}</div>` : ''}</div>
+                </div>
                <div>
                  <img class="small_card_img" src="${pokemon['sprites']['other']["official-artwork"]['front_default']}" alt="picture of Pokemon">
                </div>
              </div>
             </div>
-           
         </div>`;
 }
 

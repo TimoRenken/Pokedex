@@ -70,3 +70,9 @@ body{
     justify-content: center;
     gap: 8px;
 }
+.display_type{
+    border-radius: 40px;
+    width: 64px;
+    height: 24px;
+    color: white;
+}

@@ -19,10 +19,6 @@ async function loadPokemon() {
     console.log('loaded Pokemon', currentPokemon); 
 }
 
-function renderPokemonInfo() {
-    document.getElementById('pokemon_name').innerHTML = currentPokemon['name'];
-    document.getElementById('pokemonImage').src = currentPokemon['sprites']['other']["official-artwork"]['front_default'];
-}
 // shows small Pokemoncards as a List. 
 function renderPokemonList(){
     let content = document.getElementById('content');
@@ -32,7 +28,11 @@ function renderPokemonList(){
         const pokemon = allPokemon[i];
         content.innerHTML += generatePokemonList(pokemon, i);
         determineBackgroundColor(pokemon, i);
+        typeBgColor(pokemon, i);
     }
-
 }
 
+function renderPokemonInfo() {
+    document.getElementById('pokemon_name').innerHTML = currentPokemon['name'];
+    document.getElementById('pokemonImage').src = currentPokemon['sprites']['other']["official-artwork"]['front_default'];
+}
