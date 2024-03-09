@@ -21,7 +21,9 @@ function generatePokemonList(pokemon, i) {
                </div>
              </div>
             </div>
-        </div>`;
+        </div>
+        `;
+        
 }
 
 /* <div class="info_container"></div> // wird für die große Karte gebraucht. */
