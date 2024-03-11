@@ -2,6 +2,9 @@ body{
     margin: 0;
     font-family: Lato, sans-serif;
 }
+.d_flex{
+    display: flex;
+}
 .d_flex_c_c{
     display: flex;
     justify-content: center;
@@ -12,15 +15,23 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.d_flex_se_c{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .color_white{
     color:white
 }
 
-#pokedex{
-    min-height: 50vh;
+.info_card_body{
+    min-height: 100vh;
+    width: 100%;
     background-color: rgb(24, 117, 24);
     color:white;
     display: flex;
+    flex-direction: column;
+
 }
 .info_container{
     display: flex;
@@ -28,18 +39,27 @@ body{
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     min-height: 100px;
-    margin-top: -40px;
+    flex-direction: column;
+    /* margin-top: -40px; */
 }
-#pokemonImage{
+.info_card_header{
+    width: calc(100% - 16px);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 150px;
+}
+.pokemonImage{
     height: 200px;
     aspect-ratio: 1 / 1;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -80px;
+    margin-top: -160px;
 }
 .small_card_img{
     width: 120px;
 }
+
 .small_card{
     display: flex;
     flex-direction: column;
@@ -49,6 +69,13 @@ body{
     text-align: center;
     cursor: pointer;
 }
+.small_card:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.6);
+}
+.small_card:hover .small_card_img {
+    transform: scale(1.1);
+}
+
 .small_card_body{
     padding: 0 20px 0 20px;
     background-image: url(/images/pokeball_bg.png);
@@ -91,4 +118,32 @@ body{
 }
 #loading_btn{
     display: flex;
+}
+.info_card_background{
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+}
+.close_btn{
+    font-size: 32px;
+    cursor: pointer;
+}
+.info_card_type{
+    text-align: center;
+    gap: 8px;
+}
+.card_navbar a{
+    text-decoration: none;
+    color: #9f8d8d;
+}
+.card_navbar a:hover{
+    text-decoration: none;
+    color: black
 }
