@@ -37,7 +37,7 @@ function renderPokemonList(){
     for (let i = 0; i < 20; i++) {
         let pokemon = allPokemon[i];
         content.innerHTML += generatePokemonList(pokemon, i);
-        determineBackgroundColor(pokemon, i);
+        determineBackgroundColor(i);
         typeBgColor(i); // pokemon gelöscht
     }
 }

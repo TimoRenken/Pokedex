@@ -12,11 +12,18 @@ async function includeHTML() {
     }
   }
 
-// determine Backgroundcolor of small Card by Pokemontype
-function determineBackgroundColor(pokemon, i){
+// determine Backgroundcolor of Cards by Pokemontype
+function determineBackgroundColor(i){
   let card = document.getElementById(`small_card_${i}`);
-  let type = pokemon['types']['0']['type']['name'];
-  card.classList.add(`type_${type}`);
+  if (card === null){                                     // when "small_card_i" is not found it's "info_card_body".
+    card = document.getElementById('info_card_Bg');
+  }
+  if(card !== null){                                      // if card is available.
+    let type = allPokemon[i]['types']['0']['type']['name'];
+    card.classList.add(`type_${type}`);
+  } else {
+    console.log('Element not found');
+  }
 }
 
 // determine Backgroundcolor of Type.
@@ -33,6 +40,7 @@ function typeBgColor(i){
   }
 }
 
+// open a Pokemon for more Details
 function openPokemon(i){
   let content = document.getElementById('content');
   let name = allPokemon[i]['name']; 
@@ -41,9 +49,11 @@ function openPokemon(i){
   let pokemonType = pokemon['types']['0']['type']['name'];
   let pokemonImage = pokemon['sprites']['other']["official-artwork"]['front_default']
   content.innerHTML = generateInfoCard(formattedName,pokemon,pokemonType,pokemonImage, i);
+  determineBackgroundColor(i);
   typeBgColor(i);
 }
 
+// close Pokemondetails
 function closePokemonCard(){
   renderPokemonList();
 }

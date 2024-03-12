@@ -23,17 +23,14 @@ function generatePokemonList(pokemon, i) {
             </div>
         </div>
         `;
-        
 }
 
 function generateInfoCard(formattedName, pokemon, pokemonType, pokemonImage, i){
-  
-
   return /*html*/ `
   <div class="info_card_background">
-    <div class="info_card_body">
+    <div class="info_card_body" id="info_card_Bg">
       <div class="info_card_header">
-        <div class="close_btn" onclick="closePokemonCard()"><span class="material-symbols-outlined">close</span></div>
+        <div class="close_btn"><span class="material-symbols-outlined"onclick="closePokemonCard()">close</span></div>
         <div class="d_flex_sb_c">
           <h1 class="color_white">${formattedName}</h1>
           <div class="card_id">#${pokemon['id']}</div>
@@ -51,7 +48,7 @@ function generateInfoCard(formattedName, pokemon, pokemonType, pokemonImage, i){
           <a href="">Evolution</a>
           <a href="">Moves</a>
         </nav>
-        <div class="muss nach link gerendert werden"></div>
+        <div id="info_stats"></div>
       </div>
     </div>
   </div>
