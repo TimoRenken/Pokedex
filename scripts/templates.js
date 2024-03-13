@@ -1,6 +1,6 @@
 
 // Displays small Pokemon Cards
-function generatePokemonList(pokemon, i) {
+function generatePokemonList(pokemon, i) { // let auslagern!!!!!!
     let name = pokemon['name'];
     let formattedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(); // returns first letter uppercased, rest lowercased.
 
@@ -42,13 +42,16 @@ function generateInfoCard(formattedName, pokemon, pokemonType, pokemonImage, i){
       </div>
       <div class="info_container">
         <img class="pokemonImage" src="${pokemonImage}" alt="picture of Pokemon">
-        <nav class="card_navbar d_flex_se_c">
-          <a href="#">About</a>
-          <a href="#">Base Stats</a>
-          <a href="">Evolution</a>
-          <a href="">Moves</a>
-        </nav>
-        <div id="info_stats"></div>
+        <div id="info_content">
+          <div class=test>
+            <h1 class="headline">Base Stats</h1>
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="d_flex_sa_c">
+          <span class="material-symbols-outlined arrow">arrow_back</span>
+          <span class="material-symbols-outlined arrow">arrow_forward</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

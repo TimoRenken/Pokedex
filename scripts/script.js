@@ -51,6 +51,7 @@ function openPokemon(i){
   content.innerHTML = generateInfoCard(formattedName,pokemon,pokemonType,pokemonImage, i);
   determineBackgroundColor(i);
   typeBgColor(i);
+  renderChart(pokemon);
 }
 
 // close Pokemondetails

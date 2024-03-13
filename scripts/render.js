@@ -51,12 +51,23 @@ function loadMorePokemon(){
     for (let i = currentLength; i < newLimit; i++) {
         let pokemon = allPokemon[i];
         content.innerHTML += generatePokemonList(pokemon, i);
-        determineBackgroundColor(pokemon, i);
+        determineBackgroundColor(i);
         typeBgColor(i);
     }
 }
 
 function renderPokemonInfo() {
-    document.getElementById('pokemon_name').innerHTML = currentPokemon['name'];
+    document.getElementById('pokemon_name').innerHTML = currentPokemon['name'];             // kann evtl gelöscht werden. -> test am Ende
     document.getElementById('pokemonImage').src = currentPokemon['sprites']['other']["official-artwork"]['front_default'];
+}
+
+// displays "About" in PokemonInfoCard
+function renderPokemonInfoStats(i){
+    let abilities = allPokemon[i]['abilities'][0]['ability']['name'];
+    let abilities1 = allPokemon[i]['abilities'][1]['ability']['name'];
+    let weight = allPokemon[i]['weight'];
+    let height = allPokemon[i]['height'];
+    let xp = allPokemon[0]['base_experience'];
+    let content = document.getElementById('info_content');
+    content.innerHTML = ``;
 }
