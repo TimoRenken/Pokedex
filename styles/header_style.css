@@ -1,5 +1,5 @@
 .header_main_container{
-    border-bottom: 1px solid grey;
+    
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -10,4 +10,7 @@
 }
 input{
     width: 140px;
+}
+.border{
+    border-bottom: 1px solid grey;
 }

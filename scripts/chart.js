@@ -25,7 +25,7 @@ new Chart(ctx, {
     }]
   },
   options: {
-    indexAxis: 'y',
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true

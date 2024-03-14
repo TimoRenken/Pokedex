@@ -19,7 +19,7 @@ async function loadInitialPokemon() {
     loadRemainingPokemon(); 
 }
 
-// push rest of Pokemon to Array allPokemon
+// push remaining Pokemon to Array allPokemon
 async function loadRemainingPokemon() {
     for (let i = 21; i <= loadLimit; i++) {
         let url = `https://pokeapi.co/api/v2/pokemon/${i}` 
@@ -56,12 +56,7 @@ function loadMorePokemon(){
     }
 }
 
-function renderPokemonInfo() {
-    document.getElementById('pokemon_name').innerHTML = currentPokemon['name'];             // kann evtl gelöscht werden. -> test am Ende
-    document.getElementById('pokemonImage').src = currentPokemon['sprites']['other']["official-artwork"]['front_default'];
-}
-
-// displays "About" in PokemonInfoCard
+// displays "About" in PokemonInfoCard          !!!!!!! kann wahrscheinlich weg !!!!!!!!!!!!!!!!!
 function renderPokemonInfoStats(i){
     let abilities = allPokemon[i]['abilities'][0]['ability']['name'];
     let abilities1 = allPokemon[i]['abilities'][1]['ability']['name'];
