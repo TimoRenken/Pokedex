@@ -1,5 +1,5 @@
 
-// Displays small Pokemon Cards
+// generate small Pokemon Cards
 function generatePokemonList(pokemon, i) { // let auslagern!!!!!!
   let name = pokemon['name'];
   let formattedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(); // returns first letter uppercased, rest lowercased.
@@ -25,10 +25,11 @@ function generatePokemonList(pokemon, i) { // let auslagern!!!!!!
         `;
 }
 
+// generate Infocard.
 function generateInfoCard(formattedName, pokemon, pokemonType, pokemonImage, i) {
   return /*html*/ `
-  <div class="info_card_background">
-    <div class="info_card_body" id="info_card_Bg">
+  <div class="info_card_background" onclick="closePokemonCard()">
+    <div class="info_card_body" id="info_card_Bg" onclick="doNotClose(event)">
       <div class="info_card_header">
         <div class="close_btn"><span class="material-symbols-outlined"onclick="closePokemonCard()">close</span></div>
         <div class="d_flex_sb_c">

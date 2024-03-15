@@ -9,3 +9,9 @@
         max-width: 450px;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .close_btn {
+      display: block;
+    }
+}

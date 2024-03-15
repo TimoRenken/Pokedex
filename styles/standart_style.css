@@ -1,0 +1,22 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* complete scrollbar color */
+::-webkit-scrollbar-track {
+    background: white; 
+    
+}
+ /* scrollBAR color */
+::-webkit-scrollbar-thumb {
+    background: rgb(253 47 0);;
+    border-radius: 10px;
+}
+/* hover color */
+::-webkit-scrollbar-thumb:hover {
+    background: #6d6c6c; 
+}
+
+.toggle_scrollbar{
+    overflow: hidden;
+}
+  

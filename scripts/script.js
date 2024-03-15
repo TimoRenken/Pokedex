@@ -46,6 +46,7 @@ function openPokemon(i){
   BackgroundColorOfInfoCard(i);
   typeBgColorOfInfoCard(i);
   renderChart(pokemon);
+  toggleScrolling();
 }
 
 // determine Backgroundcolor of Infocard by Pokemontype.
@@ -72,6 +73,7 @@ function typeBgColorOfInfoCard(i){
 // close Pokemondetails
 function closePokemonCard(){
   document.getElementById('detail_card').style.display = 'none';
+  toggleScrolling();
 }
 
 // load next Pokemon in the Infocard
@@ -88,4 +90,14 @@ function previousPokemon(i){
     i = allPokemon.length -1;
   }else i--;
   openPokemon(i);
+}
+
+function doNotClose(event){
+  event.stopPropagation();
+}
+
+// stop scrolling while in Infocard
+function toggleScrolling(){
+  let body = document.getElementById('body');
+  body.classList.toggle("toggle_scrollbar");
 }

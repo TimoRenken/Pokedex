@@ -55,14 +55,3 @@ function loadMorePokemon(){
         typeBgColor(i);
     }
 }
-
-// displays "About" in PokemonInfoCard          !!!!!!! kann wahrscheinlich weg !!!!!!!!!!!!!!!!!
-function renderPokemonInfoStats(i){
-    let abilities = allPokemon[i]['abilities'][0]['ability']['name'];
-    let abilities1 = allPokemon[i]['abilities'][1]['ability']['name'];
-    let weight = allPokemon[i]['weight'];
-    let height = allPokemon[i]['height'];
-    let xp = allPokemon[0]['base_experience'];
-    let content = document.getElementById('info_content');
-    content.innerHTML = ``;
-}
