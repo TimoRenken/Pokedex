@@ -64,8 +64,7 @@ function typeBgColorOfInfoCard(i){
   let type1 = pokemon['types']['0']['type']['name'];
   displayedType1.classList.add(`type_${type1}`);
   
-  if (pokemon['types'][1]) { // checks if [1] is true.
-    let type2 = pokemon['types']['1']['type']['name'];
+  if (pokemon['types'][1]) { // checks if [1] is true / available.
     displayedType2.classList.add(`type_${type2}`); // watch CSS-Style "background_colors".
   }
 }
@@ -74,6 +73,12 @@ function typeBgColorOfInfoCard(i){
 function closePokemonCard(){
   document.getElementById('detail_card').style.display = 'none';
   toggleScrolling();
+}
+
+// stop scrolling while in Infocard
+function toggleScrolling(){
+  let body = document.getElementById('body');
+  body.classList.toggle("toggle_scrollbar");
 }
 
 // load next Pokemon in the Infocard
@@ -92,14 +97,9 @@ function previousPokemon(i){
   openPokemon(i);
 }
 
+// do not close Content on Click.
 function doNotClose(event){
   event.stopPropagation();
-}
-
-// stop scrolling while in Infocard
-function toggleScrolling(){
-  let body = document.getElementById('body');
-  body.classList.toggle("toggle_scrollbar");
 }
 
 // search Pokemon 
@@ -108,27 +108,33 @@ function searchPokemon(){
   search = search.toLowerCase();
   let content = document.getElementById('content');
   content.innerHTML = '';
+  let foundPokemon = false;
 
   for (let i = 0; i < allPokemon.length; i++) {
     let searchedPokemon = allPokemon[i]['name'];
-    let pokemon = allPokemon[i];
     if(searchedPokemon.toLowerCase().includes(search)){
-      content.innerHTML += generatePokemonList(pokemon, i); 
+      content.innerHTML += generatePokemonList(allPokemon[i], i); 
       determineBackgroundColor(i);
       typeBgColor(i); 
+      foundPokemon = true;
     }
   }
+  if (!foundPokemon){
+    content.innerHTML = generatePokemonNotFound();
+  }
+  document.getElementById('loading_btn').style.display = "none";
 }
 
-// add Eventlistener to Input
+// add Eventlistener to Input search Pokemon
 function searchAfter3Letters(){
 let inputField = document.getElementById('search');
-inputField.addEventListener('input', function() {
-  let search = this.value;
+inputField.addEventListener('input', function() { // 'input' = event = type in inputfield / function() = anonym Function = only usable in this function. 
+  let search = this.value;  // 
   if (search.length >= 3) {
     searchPokemon();
   } else if (search.length === 0) {
     renderPokemonList();
+    document.getElementById('loading_btn').style.display = "flex";
   }
 });
 }

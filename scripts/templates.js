@@ -1,6 +1,6 @@
 
 // generate small Pokemon Cards
-function generatePokemonList(pokemon, i) { // let auslagern!!!!!!
+function generatePokemonList(pokemon, i) {
   let name = pokemon['name'];
   let formattedName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase(); // returns first letter uppercased, rest lowercased.
 
@@ -57,6 +57,14 @@ function generateInfoCard(formattedName, pokemon, pokemonType, pokemonImage, i) 
         </div>
       </div>
     </div>
+  </div>
+  `
+}
+
+function generatePokemonNotFound(){
+  return /*html*/`
+  <div class="not_found">
+    <h1>Pokémon not Found!</h1>
   </div>
   `
 }

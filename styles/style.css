@@ -1,54 +1,4 @@
-                                        /* Standart Style */
-body{
-    margin: 0;
-    font-family: Lato, sans-serif;
-    background-image: url(/images/pokeball.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-.d_flex{
-    display: flex;
-}
-.d_none{
-    display: none;
-}
-
-.d_flex_c_c{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.d_flex_sb_c{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.d_flex_se_c{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.d_flex_sa_c{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.color_white{
-    color:white
-}
-.max_width_1441{
-margin-left: auto;
-max-width: 1441px;
-margin-right: auto;
-}
-.font_s32{
-    font-size: 32px;
-}
                                          /* Small Card */
 .pokemonImage{
     height: 200px;
@@ -188,7 +138,6 @@ margin-right: auto;
     flex-direction: column;
     padding: 16px;
     flex: 1;
-   
 }
 
 #info_content{
@@ -218,3 +167,23 @@ margin-right: auto;
     display: flex;
     flex: 1;
 }
+
+.not_found{
+    margin-top: 64px;
+}
+                                            /* search Inputfield */
+#search{
+    color: white;
+    border:none;
+    outline: none;
+    text-align: center;
+    width: 200px;
+    border-radius: 8px;
+    background-color: rgb(253 47 0);
+}
+#search::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 0.9;
+}
+
+

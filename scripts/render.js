@@ -45,7 +45,7 @@ function renderPokemonList(){
 // displays 20 more Pokemon. 
 function loadMorePokemon(){
     let content = document.getElementById('content');
-    let currentLength = content.children.length; // shows how many Pokemon are already shown.
+    let currentLength = content.children.length; // shows how many Pokemon are already displayed.
     let newLimit = Math.min(currentLength+20, 151) // allows up to 151 Pokemon (1. Gen).
 
     for (let i = currentLength; i < newLimit; i++) {

@@ -14,4 +14,7 @@
     .close_btn {
       display: block;
     }
+    #search{
+        width: 150px;
+    }
 }
