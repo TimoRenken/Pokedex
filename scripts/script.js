@@ -101,3 +101,34 @@ function toggleScrolling(){
   let body = document.getElementById('body');
   body.classList.toggle("toggle_scrollbar");
 }
+
+// search Pokemon 
+function searchPokemon(){
+  let search = document.getElementById('search').value;
+  search = search.toLowerCase();
+  let content = document.getElementById('content');
+  content.innerHTML = '';
+
+  for (let i = 0; i < allPokemon.length; i++) {
+    let searchedPokemon = allPokemon[i]['name'];
+    let pokemon = allPokemon[i];
+    if(searchedPokemon.toLowerCase().includes(search)){
+      content.innerHTML += generatePokemonList(pokemon, i); 
+      determineBackgroundColor(i);
+      typeBgColor(i); 
+    }
+  }
+}
+
+// add Eventlistener to Input
+function searchAfter3Letters(){
+let inputField = document.getElementById('search');
+inputField.addEventListener('input', function() {
+  let search = this.value;
+  if (search.length >= 3) {
+    searchPokemon();
+  } else if (search.length === 0) {
+    renderPokemonList();
+  }
+});
+}

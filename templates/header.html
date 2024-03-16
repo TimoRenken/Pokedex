@@ -3,8 +3,8 @@
     <h1 class="pokedex_headline">Pokédex</h1>
   </div>
   <div class="header_right_container">
-    <form action="submit">
-      <input type="search" />
+    <form onkeydown="searchAfter3Letters()">
+      <input type="search" id="search" placeholder="search for Pokemonname" minlength="3" required/>
     </form>
   </div>
 </div>
