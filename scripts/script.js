@@ -1,5 +1,6 @@
 async function includeHTML() {
     let includeElements = document.querySelectorAll("[w3-include-html]");
+
     for (let i = 0; i < includeElements.length; i++) {
       const element = includeElements[i];
       file = element.getAttribute("w3-include-html");
@@ -65,6 +66,7 @@ function typeBgColorOfInfoCard(i){
   displayedType1.classList.add(`type_${type1}`);
   
   if (pokemon['types'][1]) { // checks if [1] is true / available.
+    let type2 = pokemon['types']['1']['type']['name'];
     displayedType2.classList.add(`type_${type2}`); // watch CSS-Style "background_colors".
   }
 }
@@ -112,14 +114,14 @@ function searchPokemon(){
 
   for (let i = 0; i < allPokemon.length; i++) {
     let searchedPokemon = allPokemon[i]['name'];
+
     if(searchedPokemon.toLowerCase().includes(search)){
       content.innerHTML += generatePokemonList(allPokemon[i], i); 
       determineBackgroundColor(i);
       typeBgColor(i); 
       foundPokemon = true;
     }
-  }
-  if (!foundPokemon){
+  } if (!foundPokemon){
     content.innerHTML = generatePokemonNotFound();
   }
   document.getElementById('loading_btn').style.display = "none";
@@ -129,7 +131,8 @@ function searchPokemon(){
 function searchAfter3Letters(){
 let inputField = document.getElementById('search');
 inputField.addEventListener('input', function() { // 'input' = event = type in inputfield / function() = anonym Function = only usable in this function. 
-  let search = this.value;  // 
+  let search = this.value;  // current text in inputfield.
+
   if (search.length >= 3) {
     searchPokemon();
   } else if (search.length === 0) {
