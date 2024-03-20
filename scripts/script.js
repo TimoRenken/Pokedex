@@ -77,25 +77,14 @@ function closePokemonCard(){
   toggleScrolling(false);
 }
 
-function toggleScrolling(shouldStop){
+// toogle Scrollbar
+function toggleScrolling(stopScrolling){
   let body = document.getElementById('body');
-  if(shouldStop){
+  if(stopScrolling){ // if true
     body.classList.add("toggle_scrollbar");
-  } else {
+  } else { // if false
     body.classList.remove("toggle_scrollbar");
   }
-}
-
-// stop scrolling while in Infocard
-function stopScrolling(){
-  let body = document.getElementById('body');
-  body.classList.add("toggle_scrollbar");
-}
-
-// restore scrollbar
-function startScrolling(){
-  let body = document.getElementById('body');
-  body.classList.remove("toggle_scrollbar");
 }
 
 // load next Pokemon in the Infocard
@@ -122,26 +111,32 @@ function doNotClose(event){
 }
 
 // search Pokemon 
+
 function searchPokemon(){
   let search = document.getElementById('search').value;
   search = search.toLowerCase();
   let content = document.getElementById('content');
   content.innerHTML = '';
-  let foundPokemon = false;
+  let foundPokemon = searchInPokemonList(search, content); // returns true or false. If it's true, generatePokemonList() is executed. Else generatePokomonNotFound().
 
+  if (!foundPokemon){ // if false
+    content.innerHTML = generatePokemonNotFound();
+  }
+  document.getElementById('loading_btn').style.display = "none";
+}
+
+function searchInPokemonList(search, content) {
+  let foundPokemon = false;
   for (let i = 0; i < allPokemon.length; i++) {
     let searchedPokemon = allPokemon[i]['name'];
-
-    if(searchedPokemon.toLowerCase().includes(search)){
+    if(searchedPokemon.toLowerCase().includes(search)){ // if the value of the inputfield is in the Array allPokemon => generatePokemonList()
       content.innerHTML += generatePokemonList(allPokemon[i], i); 
       determineBackgroundColor(i);
       typeBgColor(i); 
       foundPokemon = true;
     }
-  } if (!foundPokemon){
-    content.innerHTML = generatePokemonNotFound();
   }
-  document.getElementById('loading_btn').style.display = "none";
+  return foundPokemon; // else return false
 }
 
 // add Eventlistener to Input search Pokemon
